@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+
+  flyway-migrator:
+    image: gsengun/flyway-mssql:1.0
+    volumes:
+      - ./sql:/flyway/sql
+    command: 172.16.41.131 1433 sa 12345678 testdbname
