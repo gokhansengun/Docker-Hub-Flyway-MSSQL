@@ -20,7 +20,7 @@ version: '2'
 services:
 
   flyway-migrator:
-    image: gsengun/flyway-mssql:1.0
+    image: gsengun/flyway-mssql
     volumes:
       - ./sql:/flyway/sql
     command: 172.16.41.131 1433 sa 12345678 testdbname
@@ -35,13 +35,13 @@ Below steps examplify the usage of the image in the Docker CLI.
 Open a terminal and navigate to the `sql` folder containing your migration sql files. Run the command below.
 
 ```
-docker run --rm -v `pwd`/sql:/flyway/sql gsengun/flyway-mssql:1.0 <DB_IP_OR_NAME> <DB_PORT> <DB_USERNAME> <DB_PASSWORD> <DB_NAME>
+docker run --rm -v `pwd`/sql:/flyway/sql gsengun/flyway-mssql <DB_IP_OR_NAME> <DB_PORT> <DB_USERNAME> <DB_PASSWORD> <DB_NAME>
 ```
 
 example command:
 
 ```
-docker run --rm -v `pwd`/sql:/flyway/sql gsengun/flyway-mssql:1.0 172.16.41.131 1433 sa 12345678 testdbname
+docker run --rm -v `pwd`/sql:/flyway/sql gsengun/flyway-mssql 172.16.41.131 1433 sa 12345678 testdbname
 ```
 
 
